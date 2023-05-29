@@ -17,7 +17,13 @@ app.use(cors({
   }));
 app.use(cookieParser())
 app.use(express.json());
-
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://receipe-app-sigma.vercel.app');
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+  });
 // database 
 
 connectDB()
@@ -34,3 +40,13 @@ app.use('/receipes',ReceipeRouter)
 app.listen(PORT, ()=>{
     console.log(`server is listening at ${PORT}`);
 })
+
+
+
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', 'https://receipe-app-sigma.vercel.app');
+//     res.setHeader('Access-Control-Allow-Credentials', 'true');
+//     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+//     next();
+//   });
