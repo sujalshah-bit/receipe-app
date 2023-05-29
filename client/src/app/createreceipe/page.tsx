@@ -83,7 +83,14 @@ const onSubmit =async (event:any) => {
         .split("; ")
         .find((row) => row.startsWith("userId="))
         ?.split("=")[1];
-  const response = await axios.post('https://receipe-app-api.vercel.app/receipes',{...data, userOwner:gCookie})
+  // const response = await axios.post('https://receipe-app-api.vercel.app/receipes',{...data, userOwner:gCookie})
+  const response = await fetch('https://receipe-app-api.vercel.app/receipes',{
+    method:'POST',
+    headers:{
+      'Content-Type':"application/json"
+    },
+    body:JSON.stringify({...data, userOwner:gCookie}),
+  })
   
   console.log(3);
   if (response.status != 200) {
