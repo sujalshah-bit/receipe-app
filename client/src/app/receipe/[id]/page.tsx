@@ -26,7 +26,7 @@ const Page: FC<pageProps> = ({}) => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const response = await axios.post('http://localhost:5000/receipes/id', {
+        const response = await axios.post('https://receipe-app-api.vercel.app/id', {
           receipeId: id
         });
         const { message, receipe } = response.data;

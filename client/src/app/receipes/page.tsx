@@ -24,7 +24,7 @@ const Page: FC<pageProps> = ({}) => {
   const router = useRouter();
   const callAbout = async () => {
     try {
-      const res = await fetch("http://localhost:5000/auth", {
+      const res = await fetch("https://receipe-app-api.vercel.app/auth", {
         method: "GET",
         headers: {
           Accept: "appllication/json",
@@ -49,7 +49,7 @@ const Page: FC<pageProps> = ({}) => {
         .split("; ")
         .find((row) => row.startsWith("userId="))
         ?.split("=")[1];
-      const resp = await fetch("http://localhost:5000/receipes/getreceipe", {
+      const resp = await fetch("https://receipe-app-api.vercel.app/getreceipe", {
         method: "POST",
         headers: {
           "content-type": "application/json",

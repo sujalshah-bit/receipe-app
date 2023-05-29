@@ -11,7 +11,7 @@ const Page: FC<pageProps> = ({}) => {
   const router = useRouter()
   const callAbout = async ()=>{
     try {
-        const res = await fetch('http://localhost:5000/auth',{
+        const res = await fetch('https://receipe-app-api.vercel.app/auth',{
           method:'GET',
           headers:{
             Accept:'appllication/json',
@@ -83,7 +83,7 @@ const onSubmit =async (event:any) => {
         .split("; ")
         .find((row) => row.startsWith("userId="))
         ?.split("=")[1];
-  const response = await axios.post('http://localhost:5000/receipes',{...data, userOwner:gCookie})
+  const response = await axios.post('https://receipe-app-api.vercel.app/receipes',{...data, userOwner:gCookie})
   
   console.log(3);
   if (response.status != 200) {

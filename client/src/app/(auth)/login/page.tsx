@@ -34,7 +34,7 @@ const Page: FC<pageProps> = ({}) => {
   const onSubmit = async (event: any) => {
     event.preventDefault();
     try {
-      const resp = await fetch("http://localhost:5000/auth/login", {
+      const resp = await fetch("https://receipe-app-api.vercel.app/auth/login", {
         method: "POST",
         headers: {
           "content-type": "application/json",

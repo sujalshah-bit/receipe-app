@@ -14,7 +14,7 @@ export default function Nav() {
   };
   const LogOut = async () => {
     try {
-      const res = await fetch('http://localhost:5000/auth/logout',{
+      const res = await fetch('https://receipe-app-api.vercel.app/auth/logout',{
         method:'GET',
         headers:{
           Accept:'appllication/json',
