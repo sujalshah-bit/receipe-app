@@ -49,7 +49,7 @@ const Page: FC<pageProps> = ({}) => {
         .split("; ")
         .find((row) => row.startsWith("userId="))
         ?.split("=")[1];
-      const resp = await fetch("https://receipe-app-api.vercel.app/getreceipe", {
+      const resp = await fetch("https://receipe-app-api.vercel.app/receipes/getreceipe", {
         method: "POST",
         headers: {
           "content-type": "application/json",
