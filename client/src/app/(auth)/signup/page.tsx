@@ -74,7 +74,7 @@ const Page: FC<pageProps> = ({}) => {
                   placeholder="Password"
                   className="boder-2 bg-neutral-800  border-white outline-none p-1"
                 />
-                <button>Submit {email}</button>
+                <button>Submit </button>
               </form>
             </div>
           </div>

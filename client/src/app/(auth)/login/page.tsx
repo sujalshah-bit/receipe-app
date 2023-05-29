@@ -43,14 +43,14 @@ const Page: FC<pageProps> = ({}) => {
         credentials: 'include'
       });
         const data = await resp.json()
-        setIsLoggedIn(true)
         
-      if (resp.status === 422) {
-        alert("Please fill all the filled ");
-      } else if (resp.status === 402) {
-        alert("Invalid credentials ");
-      } else {
-        router.replace("/createreceipe");
+        if (resp.status === 422) {
+          alert("Please fill all the filled ");
+        } else if (resp.status === 402) {
+          alert("Invalid credentials ");
+        } else {
+          router.replace("/createreceipe");
+          setIsLoggedIn(true)
       }
     } catch (err) {
       console.log("login", err);
