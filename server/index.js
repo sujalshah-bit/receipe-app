@@ -1,10 +1,10 @@
-const connectDB = require('../db/conn');
-const user = require('../models/userSchema')
+const connectDB = require('./db/conn');
+const user = require('./models/userSchema')
 const express = require('express')
 const  cors = require('cors')
 const  cookieParser = require('cookie-parser');
-const router = require('../router/auth');
-const ReceipeRouter = require('../router/receipeRoute');
+const router = require('./router/auth');
+const ReceipeRouter = require('./router/receipeRoute');
 require('dotenv').config({path:'./config.env'});
 const app = express()
 const PORT = process.env.PORT || 5000
