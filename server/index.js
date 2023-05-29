@@ -11,7 +11,10 @@ const PORT = process.env.PORT || 5000
 
 // setup Middleware
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://receipe-app-sigma.vercel.app',
+    credentials: true
+  }));
 app.use(cookieParser())
 app.use(express.json());
 
